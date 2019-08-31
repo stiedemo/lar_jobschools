@@ -1,0 +1,20 @@
+# Tập tin ghi lại quá trình hoàn thành sản phẩm
+# Ngày 30/08/2019 : Start Project Laravel From GitLab : https://gitlab.com/tieuhauvuong/newlaravel.git
+# Ngày 31/08/2019 : Setup Database ( Migration )
+#	Mô tả cơ bản về cơ sở dữ liệu : 
+address_tinhthanhpho(id,name,type).
+address_quanhuyen(id, name,type, id_tinh).
+address_xaphuongthitran(id, name, type, id_huyen).
+chucvu(id, name, mota).
+users(id, hovaten, ngaysinh, id_chucvu, class, school, id_address, email, email_verified_at, password, remember_token, created_at, updated_at).
+students(id, hovaten, ngaysinh, sodienthoai, sodienthoaiphuhuynh, id_address, chucvu).
+thoikhoabieu(id, name, mota).
+chitiet_thoikhoabieu(id, thu, buoi, monhoc, giaovien, start, sotiet, id_thoikhoabieu).
+sohop(id, date, noidung).
+kehoachhoatdong(id, name, noidung, thoigianbatdau, id_sohop).
+phancongkehoach(id, id_kehoach, id_student, noidung).
+thoigianbieu(id, date, id_thoikhoabieu, id_kehoach, noidung).
+diemdanh(id, id_thoigianbieu, id_student, comat, vangmat, noidung).
+quy(id, name, mota, donvi).
+donggopquy(id, id_quy,id_student, ngaynop, sotien, ghichu)
+sudungquy(id, id_quy, sotien, ngayxuat, noidung, id_kehoach, phutrach)
