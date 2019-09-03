@@ -15,6 +15,6 @@ class Address_Huyen extends Model
     }
     public function Address_Xa()
     {
-        return $this->hasMany('App\Address_Xa', 'id_huyen');
+        return $this->hasMany('App\Address_Xa', 'id_quanhuyen');
     }
 }

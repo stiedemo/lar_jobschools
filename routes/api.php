@@ -13,6 +13,9 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
+Route::group(['prefix' => 'common'], function() {
+	Route::get('get-address-huyen-by-tinh.html', ['as' => 'api_gethuyen', 'uses' => 'Api\commonController@getAddressHuyenToTinh']);
+	Route::get('get-address-xa-by-huyen.html', ['as' => 'api_getxa', 'uses' => 'Api\commonController@getAddressXaByHuyen']);
+	Route::get('get-address-tinh.html', ['as' => 'api_gettinh', 'uses' => 'Api\commonController@getAddressTinh']);
+	Route::get('get-chuc-vu.html', ['as' => 'api_getchucvu', 'uses' => 'Api\commonController@getChucVu']);
 });

@@ -11,7 +11,7 @@ class Address_Xa extends Model
     
     public function Address_Huyen()
     {
-        return $this->belongsTo('App\Address_Huyen', 'id_huyen');
+        return $this->belongsTo('App\Address_Huyen', 'id_quanhuyen');
     }
 
 }

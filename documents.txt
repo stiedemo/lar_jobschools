@@ -1,4 +1,4 @@
-# Tập tin ghi lại quá trình hoàn thành sản phẩm
+﻿# Tập tin ghi lại quá trình hoàn thành sản phẩm
 # Ngày 30/08/2019 : Start Project Laravel From GitLab : https://gitlab.com/tieuhauvuong/newlaravel.git
 # Ngày 31/08/2019 : Setup Database ( Migration )
 #	Mô tả cơ bản về cơ sở dữ liệu : 
@@ -20,4 +20,7 @@ donggopquy(id, id_quy,id_student, date, sotien, ghichu).
 sudungquy(id, id_quy, sotien, ngayxuat, noidung, id_kehoach, phutrach)
 # Ngày 31/08/2019 : Create Tables
 # Ngày 31/08/2019 : Setup GIT and Commit -> Push : https://github.com/tieuhauvuong/lar_jobschools.git
-# Ngày 31/08/2019 : Set Link Model
+# Ngày 31/08/2019 : Set Link Model ( -> Push GIT )
+# Ngày 31/08/2019 : Xây dựng Api Common ( Get Address ) và hoàn thành chức năng đăng nhập đăng ký
+# Ngày 01/09/2019 : Xây dựng các chức năng Manager : 
+    # Ngày 03/09/2019 : Tiến hành xây dựng các chức năng về quản lý Học Sinh Sinh Viên : Manager.student
