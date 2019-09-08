@@ -7,6 +7,10 @@ use Illuminate\Database\Eloquent\Model;
 class Student extends Model
 {
     protected $table = 'students';
+    const _IS_BOY = 0;
+    const _IS_GIRL = 0;
+
+    protected $fillable = ['hovaten', 'ngaysinh', 'gioitinh', 'sodienthoai', 'sodienthoaiphuhuynh', 'id_address', 'chucvu', 'id_user'];
 
     public function DiemDanh()
     {

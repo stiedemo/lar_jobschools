@@ -30,16 +30,16 @@
                         </tr>
                     </thead>
                     <tbody class="list">
-                        @foreach (Auth::user()->Student as $student )
+                        @foreach (Auth::user()->Student as $stt => $student )
                         <tr>
                             <th>
-                                <span class="mb-0 text-sm">1</span>
+                                <span class="mb-0 text-sm">{{  ++ $stt }}</span>
                             </th>
                             <th>
                                 <span class="mb-0 text-sm">{{ $student->hovaten }}</span>
                             </th>
                             <td>
-                                    <span class="mb-0 text-sm"><i class="fas fa-mars"></i> {{ $student->getGioiTinh }}</span>
+                                    <span class="mb-0 text-sm"><i class="fas fa-{{ StudentHelper::getGioiTinh($student->gioitinh, 'icon') }}"></i> {{ StudentHelper::getGioiTinh($student->gioitinh, 'name') }}</span>
                             </td>
                             <td>
                                     <span class="mb-0 text-sm">{{ $student->sodienthoai }}</span>
@@ -48,10 +48,10 @@
                                     <span class="mb-0 text-sm">{{ $student->sodienthoaiphuhuynh }}</span>
                             </td>
                             <td>
-                                    <span class="mb-0 text-sm">{{ $student->getAddress }}</span>
+                                    <span class="mb-0 text-sm"> </span>
                             </td>
                             <td>
-                                    <span class="mb-0 text-sm">{{ $student->getChucVu }}</span>
+                                    <span class="mb-0 text-sm">{{ $student->chucvu }}</span>
                             </td>
                             {{-- <td class="text-right">
                                 <div class="dropdown">
@@ -80,14 +80,15 @@
                 <p class="card-text">Hệ thống hỗ trợ chỉnh sửa thông tin học sinh sinh viên của mình một cách dễ dàng bằng file Excel. Bấm vào nút bên dưới để nhận file chỉnh sửa, thêm mới hay là xóa bỏ học sinh, sinh viên mà bạn đang quản lý.</p>
                 <p class="card-text"><strong>Lưu ý</strong>: Bạn chỉ có thể thay đổi thông tin của học sinh sinh viên. Không thể thay đổi cấu trúc của file excel.</p>
                 <div class="text-center">
-                        <a href="#" class="btn btn-primary">Nhận File</a>
+                        <a href="{{ route('Manager.Student.export') }}" class="btn btn-primary">Nhận File</a>
                 </div>
             </div>
         </div>
     </div>
     <div class="col-xl-6">
         <div class="card">
-            <div class="card-body">
+            <form method="POST" action="{{ route('Manager.Student.import') }}" class="card-body" enctype="multipart/form-data">
+                @csrf
                 <h5 class="card-title">Cập nhật thông tin học sinh sinh viên bằng file Excel</h5>
                 <p class="card-text"> Cập nhật thông tin học sinh sinh viên bằng cách tải lên file excel đã chỉnh sửa mà hệ thống đã cung cấp trước đó</p>
                 <div class="input-group mb-3">
@@ -95,14 +96,14 @@
                     <span class="input-group-text">Upload</span>
                 </div>
                 <div class="custom-file">
-                    <input type="file" class="custom-file-input" id="inputGroupFile01">
+                    <input type="file" name="file" class="custom-file-input" id="inputGroupFile01">
                     <label class="custom-file-label" for="inputGroupFile01">Chọn File Cần Cập Nhật</label>
                 </div>
                 </div>
                 <div class="text-center">
-                        <a href="#" class="btn btn-success">Update File</a>
+                        <button type="submit" class="btn btn-success">Update File</button>
                 </div>
-            </div>
+            </form>
         </div>
     </div>
 @endsection

@@ -26,5 +26,7 @@ Route::group(['prefix' => 'manager', 'middleware' => ['Login'], 'as' => 'Manager
     
     Route::group(['prefix' => 'student', 'as' => 'Student.'], function() {
         Route::get('index.html', ['as' => 'index', 'uses' => 'studentManagerController@actionHomeManager']);
+        Route::get('export-my-data.html',['as' => 'export', 'uses' => 'studentManagerController@exportStudenMe']);
+        Route::post('import-my-data.html',['as' => 'import', 'uses' => 'studentManagerController@importStudenMe']);
     });
 });
